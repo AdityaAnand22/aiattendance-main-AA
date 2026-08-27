@@ -48,7 +48,8 @@ def student_dashboard():
   stats_map = {}
   
   for log in logs:
-    sid = log['subject_id']
+    sid = log.get('student_id')
+
     
     if sid not in stats_map:
       stats_map[sid] = {"total":0, "attended":0}
